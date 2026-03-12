@@ -9,7 +9,8 @@ import Sparkline from "./components/Sparkline";
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  const { ticker, status, priceHistory } = useBybitWebSocket();
+  const { ticker, status, priceHistory, __forceDisconnect } =
+    useBybitWebSocket();
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -25,7 +26,11 @@ function App() {
           <h1 className="app-title">BTC/USDT Live Dashboard</h1>
           <ConnectionStatus status={status} />
         </div>
-        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        <ThemeToggle
+          theme={theme}
+          onToggle={toggleTheme}
+          onClick={__forceDisconnect}
+        />
       </header>
 
       {/* Stats Cards */}
