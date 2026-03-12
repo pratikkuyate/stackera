@@ -96,5 +96,10 @@ export function useBybitWebSocket() {
     };
   }, [connect]);
 
-  return { ticker, status, priceHistory };
+  return {
+    ticker,
+    status,
+    priceHistory,
+    __forceDisconnect: () => wsRef.current?.close(),
+  };
 }
