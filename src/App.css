@@ -1,0 +1,149 @@
+:root[data-theme="dark"] {
+  --bg: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #f1f1f1;
+  --text-muted: #888;
+  --header-bg: #111;
+  --toggle-bg: #2a2a2a;
+  --toggle-hover: #3a3a3a;
+}
+
+:root[data-theme="light"] {
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #111111;
+  --text-muted: #666;
+  --header-bg: #ffffff;
+  --toggle-bg: #e0e0e0;
+  --toggle-hover: #d0d0d0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 24px 40px;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.chart-section {
+  height: 550px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--header-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.theme-toggle {
+  background: var(--toggle-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--toggle-hover);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stats-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background 0.3s, border 0.3s;
+}
+
+.stats-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stats-value {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: color 0.3s;
+}
+
+.sparkline-wrapper {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 24px;
+}
+
+.sparkline-title {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sparkline-empty {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.tradingview-wrapper {
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.tradingview-widget-container {
+  height: 100%;
+}
