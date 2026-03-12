@@ -77,6 +77,45 @@ body {
   transition: background 0.2s;
 }
 
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-icon {
+  display: inline-block;
+  animation: spin-in 0.4s ease;
+}
+
+@keyframes spin-in {
+  from {
+    transform: rotate(-90deg) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.disconnect-icon {
+  display: inline-block;
+}
+
+.theme-toggle:hover .disconnect-icon {
+  animation: plug-shake 0.4s ease;
+}
+
+@keyframes plug-shake {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-15deg); }
+  40%  { transform: rotate(15deg); }
+  60%  { transform: rotate(-10deg); }
+  80%  { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
 .theme-toggle:hover {
   background: var(--toggle-hover);
 }
